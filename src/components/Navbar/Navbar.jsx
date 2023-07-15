@@ -49,7 +49,8 @@ const Navbar = () => {
                     <div class="hoverEffect">
                         <div>
                         </div>
-                    </div> </button>
+                    </div> 
+                    </button>
             </div>
         </div>
     )

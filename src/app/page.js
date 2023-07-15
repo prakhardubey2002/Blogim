@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import lottie from "lottie-web";
 import React from "react";
-import home from 'public/Lotti/Home'
+import home from 'public/Lotti/home'
 export default function Home() {
   React.useEffect(() => {
     lottie.loadAnimation({

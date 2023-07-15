@@ -37,14 +37,19 @@ const links = [
 const Navbar = () => {
     return (
         <div className={styles.container} >
-            <Link href="/" className={styles.logo} >Lamian</Link>
+            <Link href="/" className={styles.logo} >Blogim</Link>
             <div className={styles.links} >
                 {
                     links.map(link => (
                         <Link key={link.id} href={link.url} className={styles.link} >{link.title}</Link>
                     ))
                 }
-                <button  className={styles.logout} onClick={() => { console.log("logged out") }}> Logout </button>
+                <button className='button' onClick={() => { console.log("logged out") }}>
+                    Logout
+                    <div class="hoverEffect">
+                        <div>
+                        </div>
+                    </div> </button>
             </div>
         </div>
     )

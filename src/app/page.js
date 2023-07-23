@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import lottie from "lottie-web";
 import React from "react";
 import home from 'public/Lotti/home'
-import Button from '@/components/Button/Button';
+import Button from '@/components/Button/Button';//@ (alias) take it to root directory
 export default function Home() {
   React.useEffect(() => {
     lottie.loadAnimation({

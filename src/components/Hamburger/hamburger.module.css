@@ -10,36 +10,62 @@
     align-items: flex-end;
     /* position: relative; */
     transition: all 0.4s ease-in-out;
+    display: none;
     
 }
 
 .links {
-    position: absolute;
-    top: 0;
-    background-color: rgb(255, 157, 157);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-500%);
-   
-}
-.linksreveal{
-    background-color: rgb(255, 157, 157);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transform: translateY(0%);
     transition-delay: 200ms;
+    animation: gone 0.2s linear;
+   
 }
+.linksreveal{
+    background-color: rgb(255, 157, 157);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    transform: translateY(0%);
+    transition-delay: 200ms;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: fit-content;
+    animation: example 0.3s linear;
+    padding: 1rem;
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    z-index: 1000;
+}
+@keyframes example {
+    from {transform: translatex(-50%)}
+    to {transform: translatex(0%)}
+  }
+@keyframes gone {
+    from {transform: translateY(0%)}
+    to {transform: translateY(-50%)}
+  }
+
 .links a {
     color: #fff;
     padding: 0.2rem;
 }
 .linksreveal a {
+   width: 100%;
     color: #fff;
     padding: 0.2rem;
+    border-bottom: 1px  solid black;
+    margin: 0.5rem 0;
+}
+.linksreveal h2{
+    color: plum;
 }
 .navicon{
     padding: 0.2rem 0.3rem;
@@ -50,5 +76,17 @@
     align-items: center;
 }
 @media only screen and (max-width: 600px) {
-   
+    .hamburger{
+        padding: 1rem;
+    /* background-color: plum; */
+    /* display: none; */
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* position: relative; */
+    transition: all 0.4s ease-in-out;
+        /* display: block; */
+        position: relative;
+    }
 }

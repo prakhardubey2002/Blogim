@@ -47,7 +47,7 @@ const Hamburger = () => {
                     return {
                         class: "linksreveal", disp: true
                     }
-                } else {
+                } else if (prevDisplay.class == "linksreveal" || prevDisplay.disp == true) {
                     return {
                         class: "links", disp: false
                     }
@@ -70,6 +70,7 @@ const Hamburger = () => {
                 </div>
             </div>
             {display.disp && <div className={styles[display.class]} >
+                <h2>Blogim</h2>
                 {
                     links.map(link => (
                         <Link key={link.id} href={link.url} className={styles.link} >{link.title}</Link>

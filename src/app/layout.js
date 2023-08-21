@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar/Navbar'
 import './globals.css'
 import { Inter, Lato } from 'next/font/google'//by default call from google cdn 
 import Footer from '@/components/Footer/Footer'
+import Hamburger from '@/components/Hamburger/Hamburger'
 
 const inter = Inter({ subsets: ['latin'] })
 const lato = Lato({
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       <body className={lato.className}>
         <div className="container">
           <Navbar />
+          <Hamburger/>
           {children}
           <Footer />
         </div>

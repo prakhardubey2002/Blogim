@@ -1,3 +1,25 @@
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: plum;
+  border-radius: 2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c0b4f3;
+}
+
+
 
 html,
 body {
@@ -5,6 +27,7 @@ body {
   overflow-x: hidden;
   background-color: #111;
   color: #bbb;
+  scroll-behavior: smooth;
 }
 a{
   text-decoration: none;

@@ -35,6 +35,11 @@ const links = [
         title: "Dashboard",
         url: "/dashboard"
     },
+    {
+        id: 6,
+        title: "feedback",
+        url: "/feedback"
+    },
 ]
 const Hamburger = () => {
     const [display, setDisplay] = useState({

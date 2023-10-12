@@ -3,6 +3,7 @@ import './globals.css'
 import { Inter, Lato } from 'next/font/google'//by default call from google cdn 
 import Footer from '@/components/Footer/Footer'
 import Hamburger from '@/components/Hamburger/Hamburger'
+import { ThemeProvider } from '../../context/ThemeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 const lato = Lato({
@@ -11,7 +12,7 @@ const lato = Lato({
 })
 
 export const metadata = {
-  title: 'Blog App',
+  title: 'Blogim',
   description: 'Blogging Application',
 }
 
@@ -19,14 +20,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
-      <body className={lato.className}>
-        <div className="container">
-          <Navbar />
-          <Hamburger/>
-          {children}
-          <Footer />
-        </div>
-      </body>
+        <body className={lato.className}>
+      <ThemeProvider>
+          <div className="container">
+            <Navbar />
+            <Hamburger />
+            {children}
+            <Footer />
+          </div>
+      </ThemeProvider>
+        </body>
     </html>
   )
 }

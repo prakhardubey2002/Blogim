@@ -8,6 +8,7 @@ const Portfolio = () => {
       </h1>
       <div className={styles.items} >
         <Link href="/portfolio/illustrations" className={styles.item}>
+          {/* Foldername/categoryname ,category name can be obtained in slug layout using params property */}
           <span className={styles.title} >Illustration</span>
         </Link>
         <Link href="/portfolio/website" className={styles.item}>

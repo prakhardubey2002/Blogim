@@ -1,14 +1,26 @@
 import Image from 'next/image'
 import React from 'react'
 import styles from "./page.module.css";
-const BlogPost = ({params}) => {
+import { notFound } from "next/navigation"
+async function getData(id ) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,// static data fetching ,nextjs is caching our data then returning
+    { cache: 'no-store' });// cache when set 'no-store' will call dat each time page refresg or make request nullifying caching, and { next: { revalidate: 3600 } } will call data every 36000sec here seconds ae mutable to any value
+  if (!res.ok) {
+    return notFound();
+  }
+  return res.json();
+}
+
+const BlogPost = async ({ params }) => {
+  console.log(params.id);
+  const data = await getData(params.id)
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <div className={styles.info}>
-          <h1 className={styles.title}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, quibusdam.</h1>
+          <h1 className={styles.title}>{data.title}</h1>
           <p className={styles.desc}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolor.
+            {data.body}
           </p>
           <div className={styles.author}>
             <Image
@@ -18,7 +30,7 @@ const BlogPost = ({params}) => {
               height={40}
               className={styles.avatar}
             />
-            <span className={styles.username}>dz</span>
+            <span className={styles.username}>{data.id}</span>
           </div>
         </div>
         <div className={styles.imageContainer}>
@@ -32,7 +44,7 @@ const BlogPost = ({params}) => {
       </div>
       <div className={styles.content}>
         <p className={styles.text}>
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid dolores fuga aperiam eius ad incidunt doloremque dolorum porro impedit consequuntur, minima rem, ipsum blanditiis exercitationem. Animi neque itaque aperiam!
+        {data.body}
         </p>
       </div>
     </div>

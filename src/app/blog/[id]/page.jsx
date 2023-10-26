@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { notFound } from "next/navigation"
 async function getData(id ) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,// static data fetching ,nextjs is caching our data then returning
-    { cache: 'no-store' });// cache when set 'no-store' will call dat each time page refresg or make request nullifying caching, and { next: { revalidate: 3600 } } will call data every 36000sec here seconds ae mutable to any value
+    { cache: 'no-store' });// cache when set 'no-store' will call data each time page refresh or make request nullifying caching, and { next: { revalidate: 3600 } } will call data every 36000sec here seconds ae mutable to any value
   if (!res.ok) {
     return notFound();
   }

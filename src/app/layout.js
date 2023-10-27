@@ -3,7 +3,7 @@ import './globals.css'
 import { Inter, Lato } from 'next/font/google'//by default call from google cdn 
 import Footer from '@/components/Footer/Footer'
 import Hamburger from '@/components/Hamburger/Hamburger'
-import { ThemeProvider } from '../../context/ThemeContext'
+import { ThemeProvider } from '@/context/ThemeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 const lato = Lato({

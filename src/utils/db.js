@@ -6,3 +6,4 @@ const connect = async () => {
         throw new Error(` Connection Failed : ${error}`);
     }
 }
+export default connect;

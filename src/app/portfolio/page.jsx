@@ -11,10 +11,10 @@ const Portfolio = () => {
           {/* Foldername/categoryname ,category name can be obtained in slug layout using params property */}
           <span className={styles.title} >Illustration</span>
         </Link>
-        <Link href="/portfolio/website" className={styles.item}>
+        <Link href="/portfolio/websites" className={styles.item}>
           <span className={styles.title} >Website</span>
         </Link>
-        <Link href="/portfolio/application" className={styles.item}>
+        <Link href="/portfolio/applications" className={styles.item}>
           <span className={styles.title} >Application</span>
         </Link>
       </div>

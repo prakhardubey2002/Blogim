@@ -2,7 +2,10 @@ import React from 'react'
 import styles from './page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-
+export const metadata = {
+  title: 'Blog',
+  description: 'Blogs',
+}
 async function getData() {
   const res = await fetch('http://localhost:3000/api/posts',// static data fetching ,nextjs is caching our data then returning
   { cache: 'no-store' });// cache when set 'no-store' will call dat each time page refresg or make request nullifying caching, and { next: { revalidate: 3600 } } will call data every 36000sec here seconds ae mutable to any value

@@ -1,10 +1,19 @@
 "use client"
 import React from 'react'
 import styles from './page.module.css'
-import { signIn } from 'next-auth/react'
-
+import { signIn, useSession } from 'next-auth/react'
+import GoogleIcon from '@mui/icons-material/Google';
+import LoginIcon from '@mui/icons-material/Login';
+import { useRouter } from 'next/navigation';
 const Login = () => {
-
+  const router = useRouter();
+  const session = useSession();
+  if (session.status == "loading") {
+    return <p>Loading...</p>;
+  }
+  if (session.status == "authenticated") {
+    router?.push("/dashboard");
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
@@ -26,11 +35,15 @@ const Login = () => {
           className={styles.input}
           required />
         <button className={styles.button} >
+          <LoginIcon/>
           Login
         </button>
 
       </form>
-      <button onClick={() => signIn("google")} >Login with Google</button>
+      <button className={styles.googleb} onClick={() => signIn("google")} >
+         < GoogleIcon/>
+          Login with Google
+          </button>
     </div>
   )
 }

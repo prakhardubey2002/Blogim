@@ -1,70 +1,90 @@
 .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .title{
-    color: #bbb;
-  }
-  
-  .subtitle{
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: #bbb;
-  }
-  
-  .form {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .input {
-    padding: 20px;
-    background-color: transparent;
-    border: 2px solid #bbb;
-    border-radius: 5px;
-    outline: none;
-    color: #bbb;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .button {
-    width: 300px;
-    padding: 20px;
-    cursor: pointer;
-    background-color: #53c28b;
-    border: none;
-    border-radius: 5px;
-    color: #eee;
-    font-weight: bold;
-  }
-  
-  .button:hover {
-    background-color: #49b07d;
-  }
-  
-  .or {
-    color: #bbb;
-  }
-  
-  .link {
-    text-decoration: underline;
-    color: #7d7c7c;
-  }
-  
-  .link:hover {
-    color: rgb(61, 61, 61);
-  }
-  
-  .google {
-    background-color: rgba(228, 97, 50, 0.72);
-  }
-  
-  .google:hover {
-    background-color: rgba(228, 97, 50, 0.803);
-  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  color: #bbb;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #bbb;
+}
+
+.form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  padding: 20px;
+  background-color: transparent;
+  border: 2px solid #bbb;
+  border-radius: 5px;
+  outline: none;
+  color: #bbb;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.button {
+  width: 300px;
+  padding: 20px 110px;
+  cursor: pointer;
+  background-color: #53c28b;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: #49b07d;
+}
+
+.or {
+  color: #bbb;
+}
+
+.link {
+  text-decoration: underline;
+  color: #7d7c7c;
+}
+
+.link:hover {
+  color: rgb(61, 61, 61);
+}
+
+.google {
+  background-color: rgba(228, 97, 50, 0.72);
+}
+
+.google:hover {
+  background-color: rgba(228, 97, 50, 0.803);
+}
+
+.googleb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+padding: 12px 18px;
+border-radius: 2rem;
+background-color: rgb(255, 255, 255);
+outline: none;
+border: 0px ;
+font-weight: 400;
+font-size: 1 rem;
+transition: 0.2s all ease-in-out;
+}
+.googleb:hover{
+  background-color: rgb(121, 246, 246);
+}

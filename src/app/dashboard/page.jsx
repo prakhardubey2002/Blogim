@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import styles from "./page.module.css"
+import { useSession } from 'next-auth/react';
 const Dashboard = () => {
   // const [data, setData] = useState([]);
   // const [err, setErr] = useState(false);
@@ -27,7 +28,12 @@ const Dashboard = () => {
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data, err, isLoading } = useSWR("https://jsonplaceholder.typicode.com/posts", fetcher)
   //Stale-While-Revalidate It is highly recommended if you are fetching data on the client-side. It handles caching, revalidation, focus tracking, refetching on intervals, and more
-  console.log(data);
+  // console.log(data);
+
+
+
+  const session = useSession();
+  console.log(session)
   return (
     <div className={styles.container} >
       Dashboard

@@ -15,3 +15,18 @@ export const GET = async (request,{params})=>{
     }
 
 }
+export const DELETE = async (request,{params})=>{
+    const {id}=params
+    //fetch
+    try{
+        await connect();
+        await Post.findByIdAndDelete(id)
+        
+
+        return new NextResponse(`Post has been deleted `,{status:200});
+    }catch(err){
+        return new NextResponse(`Database Error ${err} `,{status:500});
+        
+    }
+
+}
